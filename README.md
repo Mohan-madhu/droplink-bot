@@ -8,7 +8,7 @@ Make short link by using [Tnlink](https://tnlink.in/ref/Rb1412) API key. Made by
 
 ### Installation
 
-<p><a href="https://heroku.com/deploy?template=https://github.com/Kraja29041998/droplink-bot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"/></a><br/>
+<p><a href="https://heroku.com/deploy?template=https://github.com/Mohan-MV/TN-LINK_Bot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200"/></a><br/>
 <a href="https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fdakshy%2Fdroplink-bot&envs=API_KEY%2CAPI_HASH%2CAPI_ID%2CBOT_TOKEN"><img src="https://img.shields.io/badge/Deploy%20To%20Railway-purple?style=for-the-badge&logo=railway" width="200"/></a></p>
 
 ##### Required Variables
