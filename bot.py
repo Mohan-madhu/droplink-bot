@@ -41,7 +41,12 @@ async def start(bot, message):
 async def link_handler(bot, message):
     links1 = message.text
     links2 = "https://url.mysteryfacts.xyz/st?api=b6bc7bf0a57506f205a4ae8a04694ce5de1501d1&url=" + links1
-    links = links2.split("\n")
+    substr = "https://t.me/mvtmoviesearcherbot?start"
+    if substr in links1 : 
+      links = links1.split("\n")
+    else : 
+      links = links2.split("\n")
+    
     for num in range(len(links)):
       try:
         short_link = await get_shortlink(links[num])
