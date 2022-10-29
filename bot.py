@@ -39,13 +39,7 @@ async def start(bot, message):
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
-    links1 = message.text
-    links2 = "https://url.mysteryfacts.xyz/st?api=b6bc7bf0a57506f205a4ae8a04694ce5de1501d1&url=" + links1
-    substr = "https://t.me/mvtmoviesearcherbot?start"
-    if substr in links1 : 
-      links = links1.split("\n")
-    else : 
-      links = links2.split("\n")
+    links = message.text
     
     for num in range(len(links)):
       try:
