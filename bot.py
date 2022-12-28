@@ -17,10 +17,10 @@ from os import environ
 import aiohttp
 from pyrogram import Client, filters
 
-API_ID = environ.get('API_ID')
-API_HASH = environ.get('API_HASH')
-BOT_TOKEN = environ.get('BOT_TOKEN')
-API_KEY = environ.get('API_KEY', '71d5948e599ac45557a9ea0da696d2a7470e5ab1')
+API_ID = "17473920"
+API_HASH = "e69dbca72db91d1f4e9a5d46508202e9"
+BOT_TOKEN = "5545000937:AAG4mUaYKjJw3Vd3Q4hX1eYV2xtsLSXNzfQ"
+API_KEY = "e34f8597fe26034bf77a3878242c0b1c62b2ec49"
 
 bot = Client('tnlink bot',
              api_id=API_ID,
