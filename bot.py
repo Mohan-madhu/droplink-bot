@@ -1,26 +1,11 @@
-# DO NOT REMOVE CREDITS
-# Copyright (c) 2021 dakshy/droplink-bot
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published
-# by the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from os import environ
 import aiohttp
 from pyrogram import Client, filters
 
-API_ID = "17473920"
-API_HASH = "e69dbca72db91d1f4e9a5d46508202e9"
-BOT_TOKEN = "5545000937:AAG4mUaYKjJw3Vd3Q4hX1eYV2xtsLSXNzfQ"
-API_KEY = "e34f8597fe26034bf77a3878242c0b1c62b2ec49"
+API_ID = environ.get('API_ID')
+API_HASH = environ.get('API_HASH')
+BOT_TOKEN = environ.get('BOT_TOKEN')
+API_KEY = environ.get('API_KEY', '71d5948e599ac45557a9ea0da696d2a7470e5ab1')
 
 bot = Client('tnlink bot',
              api_id=API_ID,
@@ -28,7 +13,6 @@ bot = Client('tnlink bot',
              bot_token=BOT_TOKEN,
              workers=50,
              sleep_threshold=10)
-          
 
 
 @bot.on_message(filters.command('start') & filters.private)
@@ -40,8 +24,14 @@ async def start(bot, message):
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
-    links = message.text
-    links = links.split("\n")
+    links1 = message.text
+    links2 = "https://url.mysteryfacts.xyz/st?api=b6bc7bf0a57506f205a4ae8a04694ce5de1501d1&url=" + links1
+    substr = "https://t.me/mvtmoviesearcherbot?start"
+    if substr in links1 : 
+      links = links1.split("\n")
+    else : 
+      links = links2.split("\n")
+    
     for num in range(len(links)):
       try:
         short_link = await get_shortlink(links[num])
